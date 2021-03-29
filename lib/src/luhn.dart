@@ -51,7 +51,7 @@ class Luhn extends CheckDigit<int> {
   }
 
   @override
-  bool validate(String data) {
+  bool validate(String? data) {
     if (data == null || data.length < 2) {
       return false;
     }
@@ -61,7 +61,7 @@ class Luhn extends CheckDigit<int> {
   }
 
   @override
-  int checkDigit(String data) {
+  int checkDigit(String? data) {
     if (data == null || data.isEmpty) {
       throw ArgumentError('Must not be null or empty');
     }

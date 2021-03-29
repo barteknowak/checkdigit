@@ -32,7 +32,7 @@ class Cnpj extends CheckDigit<int> {
   }
 
   @override
-  bool validate(String data) {
+  bool validate(String? data) {
     if (data == null || data.length != 14) {
       return false;
     }
@@ -47,7 +47,7 @@ class Cnpj extends CheckDigit<int> {
   }
 
   @override
-  int checkDigit(String data) {
+  int checkDigit(String? data) {
     if (data == null || data.length != 12) {
       throw ArgumentError('Must not be null and must contain 12 digits');
     }

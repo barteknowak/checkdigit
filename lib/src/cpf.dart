@@ -11,7 +11,7 @@ class Cpf extends CheckDigit<int> {
 
   int _compute(
     String data, {
-    int factor,
+    int? factor,
   }) {
     var sum = 0;
 
@@ -22,14 +22,14 @@ class Cpf extends CheckDigit<int> {
         throw ArgumentError('Digit at index $i must be a number');
       }
 
-      sum += digit * (factor - i);
+      sum += digit * (factor! - i);
     }
 
     return sum;
   }
 
   @override
-  bool validate(String data) {
+  bool validate(String? data) {
     if (data == null || data.length != 11) {
       return false;
     }
@@ -44,7 +44,7 @@ class Cpf extends CheckDigit<int> {
   }
 
   @override
-  int checkDigit(String data) {
+  int checkDigit(String? data) {
     if (data == null || data.length != 9) {
       throw ArgumentError('Must not be null and must contain 9 digits');
     }
